@@ -51,3 +51,21 @@ def calcula_pontos_sequencia_alta(data):
         if seq.issubset(data_un):
             return 30
     return 0
+
+def calcula_pontos_full_house(data):
+    count = {}
+    for number in data:
+        if number in count:
+            count[number] += 1
+        else:
+            count[number] = 1
+
+    value = list(count.values())
+    if (len(value) == 2 and ((value[0] == 3 and value[1] == 2) or
+                               (value[0] == 2 and value[1] == 3))):
+        count = 0
+        for number in data:
+            count += number
+        return count
+    else:
+        return 0
