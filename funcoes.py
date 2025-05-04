@@ -116,3 +116,14 @@ def calcula_pontos_regra_avancada(data):
         'sequencia_alta': calcula_pontos_sequencia_alta(data),
         'sequencia_baixa': calcula_pontos_sequencia_baixa(data),
     }
+    
+def faz_jogada(data, category, score_card):
+    if category in ['sem_combinacao', 'quadra', 'full_house', 'sequencia_baixa', 'sequencia_alta', 'cinco_iguais']:
+        advanced_scores = calcula_pontos_regra_avancada(data)
+        score_card['regra_avancada'][category] = advanced_scores[category]
+            
+    elif category in ['1', '2', '3', '4', '5', '6']:
+        category_int = int(category)
+        simple_scores = calcula_pontos_regra_simples(data)
+        score_card['regra_simples'][category_int] = simple_scores[category_int]
+    return score_card
