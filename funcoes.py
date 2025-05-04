@@ -13,3 +13,11 @@ def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
 def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
     dados_rolados.append(dados_no_estoque[dado_para_remover])
     return [dados_rolados, dados_no_estoque[:dado_para_remover] + dados_no_estoque[dado_para_remover + 1:]]
+
+def calcula_pontos_regra_simples(list):
+    dictionary = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+    for i in range(1,7):
+        for val in list:
+            if val == i:
+                dictionary[i] += val
+    return dictionary
