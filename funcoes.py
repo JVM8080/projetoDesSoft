@@ -39,3 +39,15 @@ def calcula_pontos_sequencia_baixa(data):
         if seq.issubset(data_un):
             return 15
     return 0
+
+def calcula_pontos_sequencia_alta(data):
+    data_un = set(data)
+    sequencias_altas = [
+        {1, 2, 3, 4, 5},
+        {2, 3, 4, 5, 6}
+    ]
+    
+    for seq in sequencias_altas:
+        if seq.issubset(data_un):
+            return 30
+    return 0
