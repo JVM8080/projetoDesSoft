@@ -92,3 +92,17 @@ def calcula_pontos_quadra(data):
         return total
     else:
         return 0
+    
+def calcula_pontos_quina(data):
+    counts = {}
+
+    for number in data:
+        if number in counts:
+            counts[number] += 1
+        else:
+            counts[number] = 1
+
+    for count in counts.values():
+        if count >= 5:
+            return 50
+    return 0
