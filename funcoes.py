@@ -26,3 +26,16 @@ def calcula_pontos_soma(vector):
     acc = 0
     for val in vector: acc += val
     return acc
+
+def calcula_pontos_sequencia_baixa(data):
+    data_un = set(data)
+    sequencias_baixas = [
+        {1, 2, 3, 4},
+        {2, 3, 4, 5},
+        {3, 4, 5, 6}
+    ]
+    
+    for seq in sequencias_baixas:
+        if seq.issubset(data_un):
+            return 15
+    return 0
