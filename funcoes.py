@@ -21,3 +21,8 @@ def calcula_pontos_regra_simples(list):
             if val == i:
                 dictionary[i] += val
     return dictionary
+
+def calcula_pontos_soma(vector):
+    acc = 0
+    for val in vector: acc += val
+    return acc
