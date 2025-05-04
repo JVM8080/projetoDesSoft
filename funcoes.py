@@ -106,3 +106,13 @@ def calcula_pontos_quina(data):
         if count >= 5:
             return 50
     return 0
+
+def calcula_pontos_regra_avancada(data):
+    return {
+        'cinco_iguais': calcula_pontos_quina(data),
+        'full_house': calcula_pontos_full_house(data),
+        'quadra': calcula_pontos_quadra(data),
+        'sem_combinacao': calcula_pontos_soma(data),
+        'sequencia_alta': calcula_pontos_sequencia_alta(data),
+        'sequencia_baixa': calcula_pontos_sequencia_baixa(data),
+    }
