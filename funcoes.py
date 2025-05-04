@@ -69,3 +69,26 @@ def calcula_pontos_full_house(data):
         return count
     else:
         return 0
+
+def calcula_pontos_quadra(data):
+    counts = {}
+
+    for number in data:
+        if number in counts:
+            counts[number] += 1
+        else:
+            counts[number] = 1
+
+    has_four = False
+    for count in counts.values():
+        if count >= 4:
+            has_four = True
+            break
+
+    if has_four:
+        total = 0
+        for number in data:
+            total += number
+        return total
+    else:
+        return 0
